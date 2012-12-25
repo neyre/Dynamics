@@ -1,0 +1,74 @@
+\documentclass[twoside]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{lipsum}
+\usepackage{breqn}
+\usepackage{framed}
+\usepackage{graphicx}
+\usepackage{epsfig}
+
+\usepackage{microtype} % Slightly tweak font spacing for aesthetics
+\usepackage[hmarginratio=1:1,top=32mm,columnsep=20pt]{geometry} % Document margins
+\usepackage{multicol} % Used for the two-column layout of the document
+\usepackage{hyperref} % For hyperlinks in the PDF
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption} % Custom captions under/above floats in tables or figures
+\usepackage{booktabs} % Horizontal rules in tables
+\usepackage{float} % Required for tables and figures in the multi-column environment - they need to be placed in specific locations with the [H] (e.g. \begin{table}[H])
+
+\usepackage{paralist} % Used for the compactitem environment which makes bullet points with less space between them
+
+\usepackage{abstract} % Allows abstract customization
+\renewcommand{\abstractnamefont}{\normalfont\bfseries} % Set the "Abstract" text to bold
+\renewcommand{\abstracttextfont}{\normalfont\small\itshape} % Set the abstract itself to small italic text
+
+
+\title{\vspace{-15mm}\fontsize{18pt}{4pt}\selectfont\textbf{Modeling of a Damped Triple Pendulum}} % Article title
+\author{
+\large
+\textsc{Nick Eyre \& Jeff Holzgrafe}\\[2mm] % Your name
+\normalsize Franklin W. Olin College of Engineering \\ % Your institution
+\normalsize ENGR 2340: Dynamics \\ % Your institution
+\normalsize \href{mailto:neyre@students.olin.edu,jeffrey.holzgrafe@students.olin.edu}{neyre@students.olin.edu, jeffrey.holzgrafe@students.olin.edu} % Your email address
+\vspace{-5mm}
+}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+    \input{abstract.tex}
+\end{abstract}
+
+\begin{multicols}{2} % Two-column layout throughout the main article text
+    \input{background.tex}
+    \input{objective.tex}
+    \input{model.tex}
+    \input{results.tex}
+    \input{diagnosis.tex}
+    \input{improvement.tex}
+    \input{reflection.tex}
+    \input{conclusion.tex}
+    \input{future.tex}
+    
+    \begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+        \bibitem{Widnall}
+        Widnall, S. Lecture L20 - Energy Methods: Lagrange’s Equations. N.p.: 16.07 Dyanmics, 2009. PDF. 
+        \bibitem{Bann}
+        Bannister, Ross. "The Double Pendulum." The Double Pendulum. University of Reading, June 2001. Web. 09 Dec. 2012.
+        \bibitem{Von}
+        Von Herrath, Franziska, and Scott Mandell. "The Double Pendulum Problem." 19 May 2000. Lecture.
+        \bibitem{MT}
+        Marion and Thorton, Classical dynamics of particles and systems, 4 ed., Saunders. College Publishing, Fort Worth, TX, 1995.
+        \bibitem{Rocky}
+        Jones, Rocky M., and Kuch N. Patel. "Examination of Chaos in Multiple Pendulum Systems Through Computer Visualization in Java." Examination of Chaos in Multiple Pendulum Systems Through Computer Visualization in Java. N.p., n.d. Web. 10 Dec. 2012.
+    \end{thebibliography}
+\end{multicols}
+
+\appendix
+    \gdef\thesection{Appendix \Alph{section}}
+    \input{math.tex}
+
+\end{document}
+
